@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 const SYSTEM_PROMPTS = {
   discover: `You are the Saccha France AI guide — built by Indian students living in Paris to help other Indian students decide if France is the right country to study in.
