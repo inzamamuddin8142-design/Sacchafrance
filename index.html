@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saccha France — The Real Guide to Studying in France</title>
+<meta name="description" content="By Indian students, for Indian students. Everything you need to know about studying in France."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0f0f0f;
+  --paper: #f7f4ee;
+  --tricolor-blue: #002395;
+  --tricolor-red: #ED2939;
+  --saffron: #FF9933;
+  --gold: #c8922a;
+  --muted: #6b6460;
+  --border: rgba(200,146,42,0.2);
+  --card: #ffffff;
+  --soft: #efe9de;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--paper); color: var(--ink); overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(247,244,238,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px; height: 60px;
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; }
+.nav-logo span { color: var(--tricolor-blue); font-style: italic; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 100px 24px 60px;
+  background: linear-gradient(160deg, #0f0f0f 0%, #1a1a2e 100%);
+}
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 8vw, 68px); font-weight: 600; line-height: 1.1; margin-bottom: 20px; color: #f7f4ee; }
+.hero h1 em { font-style: italic; color: var(--saffron); }
+.hero-sub { font-size: 16px; color: rgba(247,244,238,0.65); max-width: 500px; line-height: 1.7; margin-bottom: 40px; }
+.hero-badges { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px; }
+.badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 18px; font-size: 12.5px; color: rgba(247,244,238,0.8); }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.btn-primary { background: var(--saffron); color: var(--ink); padding: 14px 32px; border-radius: 4px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary { background: transparent; color: #f7f4ee; padding: 14px 32px; border-radius: 4px; font-size: 14px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+.btn-secondary:hover { border-color: var(--saffron); color: var(--saffron); }
+
+.tricolor-divider { height: 4px; background: linear-gradient(to right, #FF9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%); }
+
+section { position: relative; }
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+.section-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; font-weight: 600; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 5vw, 44px); font-weight: 600; line-height: 1.15; margin-bottom: 16px; }
+.section-sub { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.7; margin-bottom: 40px; font-weight: 300; }
+
+/* WHY FRANCE */
+.why-section { background: var(--ink); }
+.why-section .section-title { color: var(--paper); }
+.why-section .section-label { color: var(--saffron); }
+.why-section .section-sub { color: rgba(247,244,238,0.6); }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: rgba(255,255,255,0.06); border-radius: 12px; overflow: hidden; }
+.why-card { background: #181818; padding: 32px 28px; transition: background 0.2s; }
+.why-card:hover { background: #202020; }
+.why-icon { font-size: 28px; margin-bottom: 16px; }
+.why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--paper); margin-bottom: 10px; }
+.why-card p { font-size: 13.5px; color: rgba(247,244,238,0.55); line-height: 1.65; }
+.why-card .stat { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: var(--saffron); margin-top: 12px; }
+
+/* COSTS */
+.city-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+.city-tab { padding: 7px 18px; border-radius: 100px; border: 1px solid var(--border); background: transparent; font-size: 13px; font-family: 'Outfit', sans-serif; cursor: pointer; transition: all 0.2s; color: var(--muted); }
+.city-tab.active, .city-tab:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cost-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+.cost-card h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.cost-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--soft); font-size: 14px; }
+.cost-row:last-child { border-bottom: none; }
+.cost-row .label { color: var(--muted); }
+.cost-row .amount { font-weight: 600; }
+.cost-row .amount.hl { color: var(--tricolor-blue); }
+.cost-total { margin-top: 20px; padding-top: 16px; border-top: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.cost-total .label { font-weight: 500; font-size: 14px; }
+.cost-total .amount { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; }
+
+/* UNIVERSITIES */
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+.filter-btn { padding: 7px 18px; border-radius: 100px; border: 1px solid var(--border); background: transparent; font-size: 12.5px; font-family: 'Outfit', sans-serif; cursor: pointer; transition: all 0.2s; color: var(--muted); }
+.filter-btn.active, .filter-btn:hover { background: var(--tricolor-blue); color: white; border-color: var(--tricolor-blue); }
+.uni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.uni-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; transition: box-shadow 0.2s, transform 0.2s; }
+.uni-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.uni-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.uni-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; }
+.uni-rank { font-size: 11px; background: var(--soft); color: var(--gold); padding: 3px 10px; border-radius: 20px; font-weight: 600; white-space: nowrap; margin-left: 8px; }
+.uni-city { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+.uni-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.uni-tag { font-size: 11px; background: rgba(0,35,149,0.07); color: var(--tricolor-blue); padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+.uni-note { font-size: 12.5px; color: var(--muted); font-style: italic; margin-bottom: 12px; line-height: 1.5; }
+.uni-fee { font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--soft); }
+.uni-fee strong { color: var(--ink); }
+
+/* HOUSING */
+.housing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.housing-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.housing-icon { font-size: 32px; margin-bottom: 14px; }
+.housing-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; margin-bottom: 6px; }
+.housing-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.housing-price { font-weight: 600; font-size: 14px; color: var(--tricolor-blue); margin-bottom: 6px; }
+.housing-link { font-size: 12px; color: var(--gold); text-decoration: none; }
+.tip-box { background: rgba(0,35,149,0.05); border: 1px solid rgba(0,35,149,0.15); border-left: 3px solid var(--tricolor-blue); border-radius: 8px; padding: 18px 22px; margin-bottom: 14px; }
+.tip-box h4 { font-size: 14px; font-weight: 600; color: var(--tricolor-blue); margin-bottom: 6px; }
+.tip-box p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+.tip-box.red { background: rgba(237,41,57,0.04); border-color: rgba(237,41,57,0.15); border-left-color: var(--tricolor-red); }
+.tip-box.red h4 { color: var(--tricolor-red); }
+
+/* CHECKLIST */
+.checklist-wrap { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+.checklist-phase { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.phase-header { padding: 16px 20px; background: var(--ink); display: flex; justify-content: space-between; align-items: center; }
+.phase-header h3 { font-size: 14px; font-weight: 500; color: var(--paper); }
+.phase-header span { font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+.check-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 20px; cursor: pointer; border-bottom: 1px solid var(--soft); transition: background 0.15s; }
+.check-item:last-child { border-bottom: none; }
+.check-item:hover { background: var(--soft); }
+.check-box { width: 18px; height: 18px; border: 1.5px solid var(--border); border-radius: 4px; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; font-size: 10px; transition: all 0.2s; }
+.check-item.done .check-box { background: var(--tricolor-blue); border-color: var(--tricolor-blue); color: white; }
+.check-label { font-size: 13.5px; line-height: 1.45; }
+.check-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.check-item.done .check-label { text-decoration: line-through; color: var(--muted); }
+
+footer { background: var(--ink); color: rgba(247,244,238,0.45); text-align: center; padding: 40px 24px; font-size: 13px; line-height: 1.8; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--paper); margin-bottom: 8px; }
+.footer-logo span { color: var(--saffron); font-style: italic; }
+footer a { color: var(--saffron); text-decoration: none; }
+
+@media (max-width: 640px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .cost-grid { grid-template-columns: 1fr; }
+  .section-inner { padding: 60px 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Saccha <span>France</span></div>
+  <ul class="nav-links">
+    <li><a href="#why">Why France</a></li>
+    <li><a href="#costs">Costs</a></li>
+    <li><a href="#universities">Universities</a></li>
+    <li><a href="#housing">Housing</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+  </ul>
+  <div>🇮🇳 → 🇫🇷</div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">By Indian students in Paris — No filter, just truth</div>
+  <h1>Should you study<br/>in <em>France?</em><br/>Saccha jawab yahan hai.</h1>
+  <p class="hero-sub">Everything Indian students need to know — universities, real costs, housing, visa, and honest experiences from people who have lived it.</p>
+  <div class="hero-badges">
+    <div class="badge">🎓 Top universities listed</div>
+    <div class="badge">💰 Real cost breakdowns</div>
+    <div class="badge">🏠 Housing guide</div>
+    <div class="badge">✅ Step-by-step checklist</div>
+  </div>
+  <div class="hero-cta">
+    <a href="#why" class="btn-primary">Explore the Guide →</a>
+    <a href="#checklist" class="btn-secondary">See Checklist</a>
+  </div>
+</section>
+
+<div class="tricolor-divider"></div>
+
+<section class="why-section" id="why">
+  <div class="section-inner">
+    <div class="section-label">The Real Picture</div>
+    <div class="section-title" style="color:var(--paper)">Why France — and why it might be for you</div>
+    <div class="section-sub">Not a brochure. Real reasons Indian students choose France — and the honest cons too.</div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">💸</div><h3>Incredibly Low Tuition</h3><p>Public universities charge around 3,000 to 4,500 euros per year for international students. That is less than one semester in the UK or Australia.</p><div class="stat">~3,500 EUR/yr</div></div>
+      <div class="why-card"><div class="why-icon">📜</div><h3>Post-Study Visa (APS)</h3><p>After your Masters, you get 1 extra year to find work in France or Europe. After PhD, it is 2 years. A real pathway to staying.</p><div class="stat">1–2 yrs APS</div></div>
+      <div class="why-card"><div class="why-icon">🏥</div><h3>Free Healthcare</h3><p>Register at Ameli.fr and get a Carte Vitale. Public healthcare is almost entirely free — no expensive insurance needed.</p><div class="stat">Near-free</div></div>
+      <div class="why-card"><div class="why-icon">💼</div><h3>Work While Studying</h3><p>Student visa allows 964 hours per year (about 19 hours per week). Minimum wage is around 11.65 euros per hour. You can earn 600 to 900 euros per month part-time.</p><div class="stat">600–900 EUR/mo</div></div>
+      <div class="why-card"><div class="why-icon">⚠️</div><h3>The Honest Cons</h3><p>French bureaucracy is painfully slow. Day-to-day life needs basic French. Paris is expensive. Culture shock is real for many Indians arriving here.</p></div>
+      <div class="why-card"><div class="why-icon">🌍</div><h3>Gateway to Europe</h3><p>Schengen zone means travel freely across 26 countries. London 2 hours by train, Barcelona 6 hours, Amsterdam 3 hours.</p><div class="stat">26 countries</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="costs">
+  <div class="section-inner">
+    <div class="section-label">Monthly Budget</div>
+    <div class="section-title">What does it actually cost?</div>
+    <div class="section-sub">Real numbers — not what the university brochure says.</div>
+    <div class="city-tabs">
+      <button class="city-tab active" onclick="showCity('paris', this)">🗼 Paris</button>
+      <button class="city-tab" onclick="showCity('lyon', this)">Lyon</button>
+      <button class="city-tab" onclick="showCity('toulouse', this)">Toulouse</button>
+      <button class="city-tab" onclick="showCity('bordeaux', this)">Bordeaux</button>
+      <button class="city-tab" onclick="showCity('lille', this)">Lille</button>
+    </div>
+    <div class="cost-grid" id="cost-display"></div>
+  </div>
+</section>
+
+<section id="universities" style="background:var(--soft);">
+  <div class="section-inner">
+    <div class="section-label">Where to Study</div>
+    <div class="section-title">Universities and Programs</div>
+    <div class="section-sub">The best options for Indian students — with honest fees and admission notes.</div>
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="filterUni('all', this)">All</button>
+      <button class="filter-btn" onclick="filterUni('masters', this)">Masters</button>
+      <button class="filter-btn" onclick="filterUni('bachelors', this)">Bachelors</button>
+      <button class="filter-btn" onclick="filterUni('business', this)">Business</button>
+      <button class="filter-btn" onclick="filterUni('engineering', this)">Engineering</button>
+      <button class="filter-btn" onclick="filterUni('sciences', this)">Sciences</button>
+    </div>
+    <div class="uni-grid" id="uni-grid"></div>
+  </div>
+</section>
+
+<section id="housing">
+  <div class="section-inner">
+    <div class="section-label">Where to Live</div>
+    <div class="section-title">Finding housing in France</div>
+    <div class="section-sub">The most stressful part of arriving. Here is everything we wish someone had told us.</div>
+    <div class="housing-grid">
+      <div class="housing-card"><div class="housing-icon">🏢</div><h3>CROUS Residences</h3><p>Government student housing. Cheapest option. Furnished, bills included. Apply immediately after getting your admission letter — extremely competitive.</p><div class="housing-price">200 – 400 EUR / month</div><a href="https://trouverunlogement.lescrous.fr" target="_blank" class="housing-link">trouverunlogement.lescrous.fr</a></div>
+      <div class="housing-card"><div class="housing-icon">👥</div><h3>Colocation (Shared Flat)</h3><p>Most popular among students. Share a flat with 2 to 4 people. Great for socialising and splitting costs.</p><div class="housing-price">400 – 700 EUR / month Paris<br/>300 – 500 EUR elsewhere</div><a href="https://www.lacartedescolocs.fr" target="_blank" class="housing-link">lacartedescolocs.fr</a></div>
+      <div class="housing-card"><div class="housing-icon">🏠</div><h3>Private Studio</h3><p>Full independence but much harder to get without a French guarantor. Use Visale to solve the guarantor problem. Available on Le Bon Coin and SeLoger.</p><div class="housing-price">700 – 1200 EUR Paris<br/>500 – 800 EUR elsewhere</div><a href="https://www.leboncoin.fr" target="_blank" class="housing-link">leboncoin.fr</a></div>
+      <div class="housing-card"><div class="housing-icon">🏨</div><h3>Private Student Residences</h3><p>Fully furnished, utilities included, less paperwork. Best for the first few months on arrival. More expensive but easiest option when you first land.</p><div class="housing-price">500 – 900 EUR / month</div><a href="https://www.nexity-studea.com" target="_blank" class="housing-link">nexity-studea.com</a></div>
+    </div>
+    <div class="tip-box"><h4>🔑 Visale — Your Free French Guarantor</h4><p>Most landlords require a French guarantor. As a foreign student you do not have one — so apply for Visale (a free government guarantee service) at visale.fr BEFORE you start apartment hunting. This is the single most important housing tip.</p></div>
+    <div class="tip-box"><h4>💰 CAF — Get 80 to 200 EUR Back Every Month</h4><p>After you move in, apply for CAF housing aid at caf.fr. The French government gives students a monthly housing subsidy of 80 to 200 euros depending on your rent and city. Most Indian students do not know about this. Do not skip it.</p></div>
+    <div class="tip-box red"><h4>⚠️ Scam Warning</h4><p>Never pay a deposit before physically visiting the apartment. Never wire money internationally for a rental. If the price is suspiciously low or the owner says they are abroad — it is a scam. Very common targeting international students.</p></div>
+  </div>
+</section>
+
+<section id="checklist" style="background:var(--soft);">
+  <div class="section-inner">
+    <div class="section-label">Your Action Plan</div>
+    <div class="section-title">Step-by-step arrival checklist</div>
+    <div class="section-sub">Tap each item when done. Share this with every Indian student coming to France.</div>
+    <div class="checklist-wrap" id="checklist-wrap"></div>
+  </div>
+</section>
+
+<div class="tricolor-divider"></div>
+
+<footer>
+  <div class="footer-logo">Saccha <span>France</span></div>
+  <p>By Indian students in Paris, for every Indian student thinking about France.</p>
+  <p style="margin-top:8px;">Follow our journey on Instagram · Built with love and real experience</p>
+</footer>
+
+<script>
+var cityData = {
+  paris: {
+    name: 'Paris',
+    items: [
+      { label: 'Rent (colocation)', amount: '500 – 700 EUR' },
+      { label: 'Food (cooking at home)', amount: '200 – 300 EUR' },
+      { label: 'Transport (Navigo pass)', amount: '30 EUR (under 26)' },
+      { label: 'Phone (Free Mobile)', amount: '2 – 20 EUR' },
+      { label: 'Utilities (usually included)', amount: '0 – 80 EUR' },
+      { label: 'Going out and misc', amount: '100 – 200 EUR' }
+    ],
+    total: '900 – 1,400 EUR',
+    note: 'Paris is the most expensive city. Studios cost 800 to 1,200 EUR. Consider nearby suburbs like Saint-Denis or Vincennes for lower rent.'
+  },
+  lyon: {
+    name: 'Lyon',
+    items: [
+      { label: 'Rent (colocation)', amount: '350 – 500 EUR' },
+      { label: 'Food', amount: '180 – 260 EUR' },
+      { label: 'Transport', amount: '25 EUR' },
+      { label: 'Phone', amount: '2 – 20 EUR' },
+      { label: 'Utilities', amount: '40 – 80 EUR' },
+      { label: 'Going out and misc', amount: '80 – 150 EUR' }
+    ],
+    total: '700 – 1,050 EUR',
+    note: 'Lyon is a fantastic city — great universities, large Indian community, much cheaper than Paris. Highly recommended.'
+  },
+  toulouse: {
+    name: 'Toulouse',
+    items: [
+      { label: 'Rent (colocation)', amount: '320 – 480 EUR' },
+      { label: 'Food', amount: '170 – 250 EUR' },
+      { label: 'Transport', amount: '20 EUR' },
+      { label: 'Phone', amount: '2 – 20 EUR' },
+      { label: 'Utilities', amount: '40 – 70 EUR' },
+      { label: 'Going out and misc', amount: '80 – 130 EUR' }
+    ],
+    total: '650 – 970 EUR',
+    note: 'Aerospace capital of France — great for engineering students. Warm weather, relaxed lifestyle, very affordable.'
+  },
+  bordeaux: {
+    name: 'Bordeaux',
+    items: [
+      { label: 'Rent (colocation)', amount: '340 – 500 EUR' },
+      { label: 'Food', amount: '170 – 250 EUR' },
+      { label: 'Transport', amount: '22 EUR' },
+      { label: 'Phone', amount: '2 – 20 EUR' },
+      { label: 'Utilities', amount: '40 – 70 EUR' },
+      { label: 'Going out and misc', amount: '80 – 150 EUR' }
+    ],
+    total: '660 – 990 EUR',
+    note: 'Beautiful city, great quality of life. Good universities. Growing tech scene. Very liveable for students.'
+  },
+  lille: {
+    name: 'Lille',
+    items: [
+      { label: 'Rent (colocation)', amount: '280 – 420 EUR' },
+      { label: 'Food', amount: '160 – 230 EUR' },
+      { label: 'Transport', amount: '18 EUR' },
+      { label: 'Phone', amount: '2 – 20 EUR' },
+      { label: 'Utilities', amount: '50 – 80 EUR' },
+      { label: 'Going out and misc', amount: '70 – 120 EUR' }
+    ],
+    total: '580 – 870 EUR',
+    note: 'Most affordable major French city. 1 hour from Paris by TGV. Close to Belgium. Good universities.'
+  }
+};
+
+var universities = [
+  { name: 'HEC Paris', city: 'Paris', rank: 'Top 10 World', tags: ['masters', 'business'], programs: 'MBA, Masters in Management, Finance', fee: '15,000 – 35,000 EUR/yr', note: 'World top 10 business school. Highly competitive admission.' },
+  { name: 'Sciences Po Paris', city: 'Paris', rank: 'Top Global', tags: ['masters', 'bachelors'], programs: 'International Relations, Public Policy, Law', fee: '10,000 – 14,000 EUR/yr', note: 'Very prestigious. Many programs taught in English.' },
+  { name: 'Universite Paris-Saclay', city: 'Paris South', rank: 'Top 15 World', tags: ['masters', 'sciences', 'engineering'], programs: 'Engineering, Physics, Math, Computer Science', fee: '3,500 – 4,500 EUR/yr', note: 'Excellent for research and sciences. Top 15 globally.' },
+  { name: 'Sorbonne University', city: 'Paris', rank: 'Top 100 World', tags: ['masters', 'bachelors', 'sciences'], programs: 'Arts, Languages, Sciences, Medicine, History', fee: '3,000 – 4,000 EUR/yr', note: 'Historic and prestigious. Very affordable tuition.' },
+  { name: 'CentraleSupelec', city: 'Paris South', rank: 'Top Grande Ecole', tags: ['masters', 'engineering'], programs: 'General Engineering, Energy, Data Science', fee: '3,500 EUR/yr', note: 'France top engineering Grande Ecole. Highly respected globally.' },
+  { name: 'ESSEC Business School', city: 'Paris', rank: 'Top 5 Europe', tags: ['masters', 'business'], programs: 'Masters in Management, Finance, Marketing', fee: '15,000 – 28,000 EUR/yr', note: 'Triple accredited. Strong alumni network across Europe.' },
+  { name: 'EDHEC Business School', city: 'Lille / Nice', rank: 'Top 10 Europe', tags: ['masters', 'business'], programs: 'Finance, Business, Entrepreneurship', fee: '15,000 – 25,000 EUR/yr', note: 'Finance specialisation is world-class.' },
+  { name: 'Universite de Lyon 1', city: 'Lyon', rank: 'Top French Uni', tags: ['masters', 'bachelors', 'sciences'], programs: 'Sciences, Medicine, Engineering, Tech', fee: '3,000 – 4,000 EUR/yr', note: 'Best city for Indian students after Paris. Much cheaper living.' },
+  { name: 'Toulouse Business School', city: 'Toulouse', rank: 'AACSB Accredited', tags: ['masters', 'business'], programs: 'Management, Aviation Management, Entrepreneurship', fee: '12,000 – 16,000 EUR/yr', note: 'Great for aviation and aerospace-adjacent business careers.' },
+  { name: 'INSA Lyon', city: 'Lyon', rank: 'Top Engineering', tags: ['masters', 'bachelors', 'engineering'], programs: 'Civil, Mechanical, Computer Science, Biosciences', fee: '3,500 – 5,000 EUR/yr', note: 'One of France most respected engineering schools.' },
+  { name: 'Grenoble Ecole de Management', city: 'Grenoble', rank: 'Triple Accredited', tags: ['masters', 'business'], programs: 'Tech Management, Finance, Innovation', fee: '12,000 – 18,000 EUR/yr', note: 'Strong in tech and business. Beautiful Alps city.' },
+  { name: 'Universite de Bordeaux', city: 'Bordeaux', rank: 'Top French Uni', tags: ['masters', 'bachelors', 'sciences'], programs: 'Sciences, Law, Economics, Public Health', fee: '3,000 – 4,000 EUR/yr', note: 'Strong research university. Excellent quality of life.' },
+  { name: 'IMT Atlantique', city: 'Nantes', rank: 'Grande Ecole', tags: ['masters', 'engineering'], programs: 'Digital, Networks, Energy, Data Science', fee: '3,500 – 5,000 EUR/yr', note: 'Excellent for digital and engineering. Growing reputation.' },
+  { name: 'Universite Paris-Cite', city: 'Paris', rank: 'Top Research', tags: ['masters', 'bachelors', 'sciences'], programs: 'Medicine, Sciences, Humanities, Law', fee: '3,000 – 4,500 EUR/yr', note: 'Strong research output. Central Paris location.' },
+  { name: 'Emlyon Business School', city: 'Lyon', rank: 'Top 15 Europe', tags: ['masters', 'business'], programs: 'Entrepreneurship, Management, Global Business', fee: '13,000 – 20,000 EUR/yr', note: 'Known for entrepreneurship culture. Lyon campus is excellent.' }
+];
+
+var checklistData = [
+  {
+    phase: '6 to 12 Months Before',
+    timing: 'Planning',
+    items: [
+      { label: 'Research universities and programs', sub: 'Use Campus France website and individual university sites' },
+      { label: 'Get transcripts attested', sub: 'HRD attestation (state govt) then MEA (central govt)' },
+      { label: 'Get certified French or English translations', sub: 'Must be done by a certified translator' },
+      { label: 'Create Campus France account', sub: 'india.campusfrance.org — mandatory for Indian students' },
+      { label: 'Attend Campus France interview', sub: 'Required before most universities accept your application' }
+    ]
+  },
+  {
+    phase: '3 to 6 Months Before',
+    timing: 'After Acceptance',
+    items: [
+      { label: 'Apply for Student Visa (VLS-TS) at VFS Global', sub: 'Book appointment early — slots go very fast' },
+      { label: 'Apply for CROUS housing immediately', sub: 'messervices.etudiant.gouv.fr — extremely competitive' },
+      { label: 'Apply for Visale free guarantor', sub: 'visale.fr — makes renting infinitely easier' },
+      { label: 'Set up Wise account for transfers', sub: 'Much cheaper than bank international transfers' },
+      { label: 'Sort first 2 weeks accommodation', sub: 'Airbnb or private student residence for arrival' }
+    ]
+  },
+  {
+    phase: 'First Week in France',
+    timing: 'Arrival',
+    items: [
+      { label: 'Validate visa at OFII', sub: 'Mandatory within 3 months — do not forget this!' },
+      { label: 'Get French SIM card', sub: 'Free Mobile 2 EUR per month is the best student deal' },
+      { label: 'Open bank account — N26 is easiest', sub: 'N26 online, or BNP Paribas or Societe Generale' },
+      { label: 'Register at your university', sub: 'Get student card — needed for discounts everywhere' },
+      { label: 'Register at Ameli.fr for health coverage', sub: 'Get your Carte Vitale health card' }
+    ]
+  },
+  {
+    phase: 'First Month',
+    timing: 'Settle In',
+    items: [
+      { label: 'Apply for CAF housing subsidy', sub: 'caf.fr — get 80 to 200 EUR per month back on your rent' },
+      { label: 'Get Navigo pass if in Paris', sub: '350 EUR per year under 26 for unlimited transport' },
+      { label: 'Join Indian student groups', sub: 'Facebook: Indian Students France or your city group' },
+      { label: 'Find Indian grocery stores nearby', sub: 'Paris: Gare du Nord area and La Chapelle' },
+      { label: 'Explore your city and meet people', sub: 'Your university will have international student events' }
+    ]
+  }
+];
+
+function showCity(city, btn) {
+  document.querySelectorAll('.city-tab').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var d = cityData[city];
+  var html = '<div class="cost-card"><h3>' + d.name + ' Monthly Budget</h3>';
+  d.items.forEach(function(i) {
+    html += '<div class="cost-row"><span class="label">' + i.label + '</span><span class="amount">' + i.amount + '</span></div>';
+  });
+  html += '<div class="cost-total"><span class="label">Total estimate</span><span class="amount">' + d.total + '</span></div></div>';
+  html += '<div class="cost-card"><h3>Note on ' + d.name + '</h3><p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:16px;">' + d.note + '</p>';
+  html += '<div class="cost-row"><span class="label">Annual tuition (public uni)</span><span class="amount hl">3,000 – 4,500 EUR</span></div>';
+  html += '<div class="cost-row"><span class="label">CAF subsidy (deducted from rent)</span><span class="amount hl">80 – 200 EUR back</span></div>';
+  html += '<div class="cost-row"><span class="label">Part-time work income</span><span class="amount hl">600 – 900 EUR</span></div></div>';
+  document.getElementById('cost-display').innerHTML = html;
+}
+
+var currentFilter = 'all';
+function filterUni(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  renderUnis();
+}
+
+function renderUnis() {
+  var filtered = currentFilter === 'all' ? universities : universities.filter(function(u) { return u.tags.indexOf(currentFilter) !== -1; });
+  var html = '';
+  filtered.forEach(function(u) {
+    var tags = u.tags.map(function(t) { return '<span class="uni-tag">' + t + '</span>'; }).join('');
+    html += '<div class="uni-card"><div class="uni-top"><div class="uni-name">' + u.name + '</div><div class="uni-rank">' + u.rank + '</div></div>';
+    html += '<div class="uni-city">📍 ' + u.city + '</div><div class="uni-tags">' + tags + '</div>';
+    html += '<div style="font-size:13px;color:var(--muted);margin-bottom:8px;line-height:1.5;">' + u.programs + '</div>';
+    html += '<div class="uni-note">' + u.note + '</div>';
+    html += '<div class="uni-fee"><span>Tuition per year</span><strong>' + u.fee + '</strong></div></div>';
+  });
+  document.getElementById('uni-grid').innerHTML = html;
+}
+
+function renderChecklist() {
+  var html = '';
+  checklistData.forEach(function(phase) {
+    html += '<div class="checklist-phase"><div class="phase-header"><h3>' + phase.phase + '</h3><span>' + phase.timing + '</span></div><div class="checklist-items">';
+    phase.items.forEach(function(item) {
+      html += '<div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div><div><div class="check-label">' + item.label + '</div><div class="check-sub">' + item.sub + '</div></div></div>';
+    });
+    html += '</div></div>';
+  });
+  document.getElementById('checklist-wrap').innerHTML = html;
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('done');
+  el.querySelector('.check-box').textContent = el.classList.contains('done') ? '✓' : '';
+}
+
+showCity('paris', document.querySelector('.city-tab.active'));
+renderUnis();
+renderChecklist();
+</script>
+</body>
+</html>
